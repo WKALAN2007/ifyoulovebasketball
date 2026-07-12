@@ -44,9 +44,7 @@ body{font-family:'Noto Sans SC','PingFang SC','Inter',sans-serif;background:var(
 
 /* Hero */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
-.hvb{position:absolute;inset:0;z-index:0;overflow:hidden}
-.hvb iframe{position:absolute;top:50%;left:50%;width:300%;height:300%;transform:translate(-50%,-50%);pointer-events:none;opacity:0.5;z-index:0}
-.hvo{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at center,rgba(6,6,10,0.15) 0%,rgba(6,6,10,0.5) 40%,rgba(6,6,10,0.85) 80%,rgba(6,6,10,0.95) 100%)}
+.hvo{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at center,rgba(6,6,10,0.1) 0%,rgba(6,6,10,0.3) 50%,rgba(6,6,10,0.7) 100%)}
 .hgr{position:absolute;inset:0;z-index:2;opacity:0.015;background-image:repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(253,185,39,0.1) 60px,rgba(253,185,39,0.1) 61px),repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(253,185,39,0.1) 60px,rgba(253,185,39,0.1) 61px)}
 .hgl{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
 .hg1{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(253,185,39,0.08),transparent 70%);top:-250px;right:-150px;animation:hf 12s ease-in-out infinite}
@@ -55,12 +53,13 @@ body{font-family:'Noto Sans SC','PingFang SC','Inter',sans-serif;background:var(
 .hz{position:relative;z-index:5;width:100%}
 .hb{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(253,185,39,0.12);border-radius:100px;padding:5px 14px;margin-bottom:28px;font-size:10px;color:var(--gold);font-weight:600;letter-spacing:0.08em}
 .hbd{width:5px;height:5px;background:#22c55e;border-radius:50%;animation:pp 2s infinite}
-@keyframes pp{0%,100%{opacity:1}50%{opacity:0.3}}
+@keyframes pp{0%,100%{opacity:1}50%{opacity:0.5}}
 .ht{font-size:clamp(48px,7vw,120px);font-weight:900;line-height:0.85;letter-spacing:-0.04em;margin-bottom:20px}
 .hta{background:linear-gradient(135deg,var(--gold),var(--gl));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 #tw2{background:linear-gradient(135deg,var(--gold),var(--gl));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hs{color:var(--mu);font-size:15px;line-height:1.7;max-width:560px;margin-bottom:36px}
 .cb{display:inline-block;width:2px;height:1em;background:var(--gold);margin-left:2px;animation:cbk 0.8s step-end infinite;vertical-align:text-bottom}
+#t1,#t2,#t4{color:var(--gold)}
 @keyframes cbk{50%{opacity:0}}
 .ha{display:flex;gap:14px;flex-wrap:wrap}
 .hst{display:flex;gap:48px;margin-top:56px;padding-top:32px;border-top:1px solid var(--border)}
@@ -88,16 +87,16 @@ body{font-family:'Noto Sans SC','PingFang SC','Inter',sans-serif;background:var(
 .asi{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:center}
 .asv{font-size:16px;font-weight:900;color:var(--gold)}
 .asl{font-size:10px;color:var(--dim);margin-top:2px}
-.at{color:var(--mu);font-size:13px;line-height:1.8;margin-bottom:14px}
+.at{color:#fff;font-size:13px;line-height:1.8;margin-bottom:14px}
 .al{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.ali{display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:8px 16px;font-size:11px;color:var(--mu);text-decoration:none;transition:0.3s}
+.ali{display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:8px 16px;font-size:11px;color:#fff;text-decoration:none;transition:0.3s}
 .ali:hover{border-color:var(--border-h);color:var(--text)}
 
 /* Timeline */
 #tlw{max-width:1100px;margin:0 auto}
 .tli{display:grid;grid-template-columns:50px 1fr;gap:24px;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border);cursor:pointer;text-decoration:none;color:inherit;transition:0.3s}
 .tli:last-child{border-bottom:none}
-.tli:hover{opacity:0.7}
+.tli:hover{opacity:1}
 .tln{font-size:18px;font-weight:800;color:var(--dim);padding-top:6px}
 .tlc{display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:center}
 .tli-img{width:220px;height:124px;object-fit:cover;border-radius:6px}
@@ -163,7 +162,7 @@ body{font-family:'Noto Sans SC','PingFang SC','Inter',sans-serif;background:var(
 
 <!-- Splash -->
 <div id="sp"><div id="sp-l">小白剪了个球</div><div id="sp-s">「不做快餐式剪辑」</div><div id="sp-b"></div></div>
-<script>setTimeout(function(){document.getElementById('sp').classList.add('hide')},2500);setTimeout(function(){var e=document.getElementById('sp');if(e&&e.parentNode)e.parentNode.removeChild(e)},3300);</script>
+<script>document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('sp').classList.add('hide')},2500);setTimeout(function(){var e=document.getElementById('sp');if(e&&e.parentNode)e.parentNode.removeChild(e);document.body.style.overflow=''},3200);</script>
 
 <!-- Lightbox -->
 <div id="lb"><div id="lbc"><button id="lbx">&times;</button><img id="lbi" alt=""><div id="lbt"></div><div id="lbs"></div><div id="lbm"><span id="lbp"></span><span id="lbl"></span></div><a id="lbb" target="_blank">在B站观看 →</a></div></div>
@@ -177,21 +176,22 @@ body{font-family:'Noto Sans SC','PingFang SC','Inter',sans-serif;background:var(
 
 <!-- Hero -->
 <section class="hero">
-<iframe id="bg-video" src="https://player.bilibili.com/player.html?bvid=BV1nx4y1t72b&autoplay=1&muted=1&loop=1&autopause=0&quality=64&playlist=BV1nx4y1t72b" frameborder="0" allow="autoplay;fullscreen" loading="lazy" style="position:absolute;top:50%;left:50%;width:300%;height:300%;transform:translate(-50%,-50%);pointer-events:none;opacity:0.5;z-index:0"></iframe></div>
-<div class="hvo"></div><div class="hgr"></div>
+
+<div style="position:absolute;inset:0;z-index:0;background:url(https://i.pinimg.com/originals/05/ef/49/05ef497ccf7c23ebb10e73dd6a8c932b.jpg) center/cover;opacity:0.4"></div><div class="hvo"></div><div class="hgr"></div>
 <div class="hgl"><div class="hg1"></div><div class="hg2"></div></div>
 <div class="ct hz">
 <div class="hb"><span class="hbd"></span> B站知名运动UP主 · 30万+粉丝</div>
-<h1 class="ht"><span id="tw1"></span><br><span id="tw2"></span></h1>
-<p class="hs"><span id="tw" style="color:var(--gold)"></span><span class="cb"></span></p>
+<h1 class="ht">每一刀，<br><span class="hta">都有情绪</span></h1>
+<p class="hs"><span id="t1"></span><span class="cb"></span></p>
+
 <div class="ha"><a href="#works" class="b1">浏览精选作品 ↓</a><a href="#contact" class="b2">合作联系</a></div>
 <div class="hst"><div><div class="hsn">500+</div><div class="hsl">部作品</div></div><div><div class="hsn">1030.5<span style="font-size:14px">万</span></div><div class="hsl">最高单条播放</div></div><div><div class="hsn">30万+</div><div class="hsl">B站粉丝</div></div></div>
 </div></section>
 
 <!-- About -->
-<section class="sec" id="about">
-<div class="ct"><div class="ag">
-<div style="text-align:center"><img src="https://i0.hdslb.com/bfs/face/b200e0fcfda538ee08c279b5e290494bc868ecbe.jpg" alt="" class="aa" loading="lazy"><div class="an">小白剪了个球</div><div class="ar">B站知名运动UP主</div>
+<section class="sec" id="about" style="position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center"><div style="position:absolute;inset:0;z-index:0;background:url(https://i.pinimg.com/originals/13/d9/d3/13d9d3450acc0eb9641b17325ca82a6f.jpg) center/cover;opacity:0.4"></div>
+<div class="ct" style="position:relative;z-index:1"><div class="ag">
+<div style="text-align:center"><img src="https://i0.hdslb.com/bfs/face/b200e0fcfda538ee08c279b5e290494bc868ecbe.jpg" alt="" class="aa" loading="lazy"><div class="an">小白剪了个球</div><div class="ar"><span id="t3"></span><span class="cb"></span></div>
 <div class="as"><div class="asi"><div class="asv">500+</div><div class="asl">作品</div></div><div class="asi"><div class="asv">30万+</div><div class="asl">粉丝</div></div><div class="asi"><div class="asv">9000万+</div><div class="asl">预估总播放</div></div></div></div>
 <div><div class="sl"><span class="sll"></span>ABOUT</div><h2 class="st">NBA台词向混剪创作者</h2>
 <p class="at">篮球的魅力不止于胜负。那些球星在聚光灯下说过的话、流露过的表情——本身就是最好的剧本。</p>
@@ -200,16 +200,16 @@ body{font-family:'Noto Sans SC','PingFang SC','Inter',sans-serif;background:var(
 </div></div></div></section>
 
 <!-- Works -->
-<section class="sec" id="works" style="background:var(--card);z-index:1">
-<div class="ct">
-<div><div class="sl"><span class="sll"></span>FEATURED WORKS</div><h2 class="st">精选作品</h2><p class="sd" style="margin-bottom:40px">播放量最高的7部作品，点击卡片预览。</p></div>
+<section class="sec" id="works" style="position:relative;overflow:hidden;z-index:1"><div style="position:absolute;inset:0;z-index:0;background:url(https://i.pinimg.com/originals/28/f3/46/28f346dda9349288c84032c19135f4a7.jpg) center/cover;opacity:0.15"></div>
+<div class="ct" style="position:relative;z-index:1">
+<div><div class="sl"><span class="sll"></span>FEATURED WORKS</div><h2 class="st">精选作品</h2><p class="sd" style="margin-bottom:40px"><span id="t2"></span><span class="cb"></span></p></div>
 <div id="tlw"></div>
 <div style="text-align:center;margin-top:36px"><a href="https://space.bilibili.com/108062400" target="_blank" class="b2" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor"><path d="M8 5v14l11-7z"/></svg> 在B站查看全部500+部作品 →</a></div>
 </div></section>
 
 <!-- Strengths -->
-<section class="sec" id="strengths">
-<div class="ct"><div style="margin-bottom:40px"><div class="sl"><span class="sll"></span>STRENGTHS</div><h2 class="st">创作优势</h2><p class="sd">500+部作品积累，打磨出六大核心能力。</p></div>
+<section class="sec" id="strengths" style="position:relative;overflow:hidden"><div style="position:absolute;inset:0;z-index:0;background:url(https://i.pinimg.com/originals/71/7c/59/717c590d606f962e21460f90479f1cd1.jpg) center/cover;opacity:0.15"></div>
+<div class="ct" style="position:relative;z-index:1"><div style="margin-bottom:40px"><div class="sl"><span class="sll"></span>STRENGTHS</div><h2 class="st">创作优势</h2><p class="sd"><span id="t4"></span><span class="cb"></span></p></div>
 <div class="sg">
 <div class="sc"><img src="https://i.pinimg.com/736x/0d/08/61/0d0861ba5e231ad9e339b18f3ee92003.jpg" alt="" style="width:100px;height:100px;border-radius:16px;object-fit:cover;display:block;margin-bottom:16px"><div class="sct">台词向混剪</div><div class="scd">捕捉球星最具感染力的瞬间，通过画面与台词的重新编排，创造情绪冲击。</div></div>
 <div class="sc"><img src="https://i.pinimg.com/736x/39/66/54/3966548406400fa2ab745e7cce61211b.jpg" alt="" style="width:100px;height:100px;border-radius:16px;object-fit:cover;display:block;margin-bottom:16px"><div class="sct">快节奏叙事</div><div class="scd">掌握短视频时代的剪辑节奏，每一帧都为情绪和叙事服务。</div></div>
@@ -220,18 +220,18 @@ body{font-family:'Noto Sans SC','PingFang SC','Inter',sans-serif;background:var(
 </div></div></section>
 
 <!-- Quote -->
-<section class="qs"><div class="ct"><div class="qt">「不做快餐式剪辑」</div><div class="qa">— 小白剪了个球</div></div></section>
+
 
 <!-- Contact -->
-<section class="csec" id="contact"><div class="cbg"></div>
+<section class="csec" id="contact" style="position:relative;overflow:hidden"><div style="position:absolute;inset:0;z-index:0;background:url(https://i.pinimg.com/originals/60/9b/57/609b571189c215f6642cc9721a87ba6a.jpg) center/cover;opacity:0.4"></div>
 <div class="ct cc">
-<div><div class="sl"><span class="sll"></span>CONTACT</div><h1 class="ctt">合作·约稿<br><span class="hta">交流</span></h1><p class="hs" style="color:var(--gold)">无论是商业合作还是剪辑交流，都欢迎联系。</p></div>
+<div><div class="sl"><span class="sll"></span>CONTACT</div><h1 class="ctt">合作·约稿<br><span class="hta">交流</span></h1><p class="hs" style="color:var(--gold)"><span id="t5"></span><span class="cb"></span></p></div>
 <div class="cg">
 <div class="ci" style="padding:0;overflow:hidden;background:#0a0a0a;border:1px solid rgba(253,185,39,0.12)"><a href="https://space.bilibili.com/108062400" target="_blank" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px;height:100%"><img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22%23FB7299%22 d=%22M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z%22/%3E%3C/svg%3E" alt="B站" style="width:72px;height:72px;margin-bottom:16px"><div class="cil" style="color:#999;font-size:11px;font-weight:700">B站</div><div class="civ" style="color:#eee;font-size:16px;font-weight:700;margin-top:4px">@小白剪了个球</div><div class="cis" style="color:#FB7299;font-size:11px;margin-top:8px;font-weight:700">去关注 →</div></a></div>
 <div class="ci" style="padding:0;overflow:hidden;background:#0a0a0a;border:1px solid rgba(253,185,39,0.12);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px"><img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22%2307C160%22 d=%22M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z%22/%3E%3C/svg%3E" alt="微信" style="width:72px;height:72px;margin-bottom:16px;object-fit:contain"><div class="cil" style="color:#999;font-size:11px;font-weight:700">微信</div><div class="civ" style="color:#eee;font-size:16px;font-weight:700;margin-top:4px">baiyunfan7</div><div class="cis" style="color:#07C160;font-size:11px;margin-top:8px;font-weight:700">注明来意</div></div>
 <div class="ci" style="padding:0;overflow:hidden;background:#0a0a0a;border:1px solid rgba(253,185,39,0.12);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px"><img src="https://cdn.worldvectorlogo.com/logos/tencent-qq.svg" alt="QQ" style="width:72px;height:72px;margin-bottom:16px;object-fit:contain"><div class="cil" style="color:#999;font-size:11px;font-weight:700">QQ粉丝群</div><div class="civ" style="color:#eee;font-size:16px;font-weight:700;margin-top:4px">1023342855</div><div class="cis" style="color:#12B7F5;font-size:11px;margin-top:8px;font-weight:700">免费看NBA</div></div>
 </div>
-<div class="cf"><span>© 2025 小白剪了个球</span><span>「不做快餐式剪辑」</span></div>
+<div style="text-align:center;padding:40px 0 20px"><div style="font-size:clamp(20px,2.5vw,36px);font-weight:900;color:var(--gold);margin-bottom:8px"><span id="t6"></span><span class="cb"></span></div><div style="font-size:12px;color:var(--mu)">— 小白剪了个球</div></div><div class="cf"><span>© 2025 小白剪了个球</span></div>
 </div></section>
 
 <script>
@@ -246,17 +246,17 @@ var D=[
 ];
 </script>
 <script>
-// Typewriter
 document.addEventListener('DOMContentLoaded',function(){
-// Typewriter - loops forever
-var _t1='每一刀，',_t2='都有情绪',_t3='NBA台词向混剪 · 不做快餐式剪辑 · 500+部作品';
-function _ty(e,t,s,cb){var i=0;(function w(){if(i<=t.length){e.textContent=t.substring(0,i);i++;setTimeout(w,s)}else{if(cb)cb()}})()}
-function _rs(){document.getElementById('tw').textContent='';var c=document.querySelector('.cb');if(c)c.style.display='inline-block'}
-function _lp(){_rs();setTimeout(function(){var e=document.getElementById('tw');if(e)_ty(e,_t3,45,function(){setTimeout(_lp,2000)})},500)}
-setTimeout(function(){var e=document.getElementById('tw1');if(e)_ty(e,_t1,80,function(){
-setTimeout(function(){var e=document.getElementById('tw2');if(e)_ty(e,_t2,80,function(){
-_lp()
-})},200)})},500);
+// Targeted typing animation (infinite loop)
+var _txt={t1:'NBA台词向混剪 · 不做快餐式剪辑 · 500+部作品',t2:'播放量最高的7部作品，点击卡片预览。',t3:'B站知名运动UP主',t4:'500+部作品积累，打磨出六大核心能力。',t5:'无论是商业合作还是剪辑交流，都欢迎联系。',t6:'「不做快餐式剪辑」'};
+var _td={};
+function _typ(id,spd){if(_td[id])return;_td[id]=true;
+  function cyc(){var i=0;(function w(){if(i<=_txt[id].length){document.getElementById(id).textContent=_txt[id].substring(0,i);i++;setTimeout(w,spd)}else{setTimeout(function(){document.getElementById(id).textContent=' ';setTimeout(cyc,600)},2500)}})()}
+  cyc()
+}
+var _ob=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var s=e.target.id||e.target.className;if(s==='hero'||e.target.classList.contains('hero'))setTimeout(function(){_typ('t1',35)},3400);if(s==='about')_typ('t3',50);if(s==='works')_typ('t2',40);if(s==='strengths')_typ('t4',40);if(s==='contact'){_typ('t5',40);setTimeout(function(){_typ('t6',50)},1200)}_ob.unobserve(e.target)}})},{threshold:0.1});
+var h=document.querySelector('.hero');if(h)_ob.observe(h);
+['about','works','strengths','contact'].forEach(function(id){var el=document.getElementById(id);if(el)_ob.observe(el)});
 var g=document.getElementById('tlw');
 g.innerHTML=D.map(function(w,i){return'<a href="javascript:void(0)" class="tli" onclick="oLB('+w.id+')"><div class="tln">'+(i+1)+'</div><div class="tlc"><img class="tli-img" src="'+w.cover+'" alt="" loading="lazy"><div><div class="tlt">'+w.title+'</div><div class="tls">'+w.sub+'</div><div class="tlm"><span><svg viewBox="0 0 24 24" style="width:14px;height:14px;vertical-align:middle;margin-right:2px;fill:#9B6DC4"><path d="M8 5v14l11-7z"/></svg> '+w.plays+'</span><span><svg viewBox="0 0 24 24" style="width:14px;height:14px;vertical-align:middle;margin-right:2px;fill:#9B6DC4"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> '+w.likes+'</span></div></div></div></a>'}).join('');
 // Nav scroll + progress
